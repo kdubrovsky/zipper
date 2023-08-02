@@ -1,35 +1,26 @@
-# Astro Starter Kit: Minimal
+# Zipper test task
 
-```
-npm create astro@latest -- --template minimal
-```
+Create landing page containing a listing of Zipper company's IT services.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+[Figma file](https://www.figma.com/file/7aFeqp9RrKV2ddSuNmEN64/DG_Front_General_IT_Test?type=design&node-id=0%3A1&mode=design&t=aXyVFiLjqzwuYykW-1)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Task conditions
+- Use a framework for static site generation (SSG): Next, Gatsby, Astro
+- You can use any CSS frameworks and UI components
+- Import data of IT services from a local JSON file
+- The search component should filter IT services by name
+- The selector component should filter IT services by rating
+- Pay attention to metadata for displaying previews in social networks and instant messengers
 
-## 🚀 Project Structure
+*Will be a plus:*
+- TypeScript usage
+- Adaptation of components for tablet and mobile version
+- Site deployment on Vercel or similar services
+- Getting data about the list of services via headless CMS (like Sanity or Dato) instead of local JSON file
 
-Inside of your Astro project, you'll see the following folders and files:
+---
 
-```
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
+## Framework commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -41,7 +32,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
