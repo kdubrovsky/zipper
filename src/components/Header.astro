@@ -1,0 +1,34 @@
+---
+import Container from './Container.astro';
+import Logotype from './Logotype.astro';
+import CategoriesMenu from './CategoriesMenu.astro';
+import MainMenuItem from './MainMenuItem.astro';
+---
+
+<header>
+  <Container>
+    <div class="wrapper">
+      <Logotype class="logotype" />
+      <nav>
+        <CategoriesMenu title="Software categories" />
+        <MainMenuItem href="#" title="Updates" />
+      </nav>
+    </div>
+  </Container>
+</header>
+
+<style>
+  header {
+    padding: 1.4375rem 0;
+  }
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+</style>

@@ -5,6 +5,7 @@ Create landing page containing a listing of Zipper company's IT services.
 [Figma file](https://www.figma.com/file/7aFeqp9RrKV2ddSuNmEN64/DG_Front_General_IT_Test?type=design&node-id=0%3A1&mode=design&t=aXyVFiLjqzwuYykW-1)
 
 ## Task conditions
+
 - Use a framework for static site generation (SSG): Next, Gatsby, Astro
 - You can use any CSS frameworks and UI components
 - Import data of IT services from a local JSON file
@@ -12,7 +13,8 @@ Create landing page containing a listing of Zipper company's IT services.
 - The selector component should filter IT services by rating
 - Pay attention to metadata for displaying previews in social networks and instant messengers
 
-*Will be a plus:*
+_Will be a plus:_
+
 - TypeScript usage
 - Adaptation of components for tablet and mobile version
 - Site deployment on Vercel or similar services

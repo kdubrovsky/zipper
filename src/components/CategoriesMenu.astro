@@ -1,0 +1,67 @@
+---
+const { title } = Astro.props;
+import { Icon } from 'astro-icon';
+---
+
+<div class="menu-toggle">
+  <button>{title}<Icon name="chevron-down" /></button>
+  <ul class="dropdown-menu opened">
+    <li><a href="#">Popular</a></li>
+    <li><a href="#">Design tools</a></li>
+    <li><a href="#">Code tools</a></li>
+    <li><a href="#">Cloud services</a></li>
+  </ul>
+</div>
+
+<style lang="scss">
+  @use '../styles/colors.scss';
+
+  .menu-toggle {
+    position: relative;
+  }
+
+  button {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+
+    background-color: colors.$white;
+    padding: 0.5rem 0; // extend clickable area
+    transition: color 0.2s;
+
+    [astro-icon] {
+      height: 24px;
+    }
+
+    &:hover {
+      color: colors.$gray200;
+    }
+  }
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    right: -1rem;
+    top: calc(100% + 0.25rem);
+    padding: 1rem 0;
+    border-radius: 1rem;
+    max-width: 16rem;
+    min-width: max-content;
+    transition: 0.2s ease-in-out;
+
+    background-color: colors.$white;
+    box-shadow: colors.$shadow_low;
+
+    &:hover {
+      box-shadow: colors.$shadow_high;
+      transform: translateY(-2px);
+    }
+
+    a {
+      padding: 0.375rem 2rem;
+    }
+
+    &.opened {
+      display: block;
+    }
+  }
+</style>
