@@ -1,0 +1,16 @@
+$sizes: (
+  's': 567px,
+  'm': 767px,
+  'l': 1023px,
+  'xl': 1439px,
+);
+
+@mixin forMediaLess($media) {
+  @each $size, $resolution in $sizes {
+    @if $media == $size {
+      @media only screen and (max-width: $resolution) {
+        @content;
+      }
+    }
+  }
+}
