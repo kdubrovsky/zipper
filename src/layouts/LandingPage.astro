@@ -1,8 +1,14 @@
 ---
-// components
+// astro components
 import Header from '../components/Header.astro';
+import OpenGraph from '../components/OpenGraph.astro';
+import Favicon from '../components/Favicon.astro';
+import GoogleFonts from '../components/GoogleFonts.astro';
 
-// styles
+// react components
+import App from '../components/App/App';
+
+// global styles
 import '../styles/normalize.scss';
 import '../styles/global.scss';
 ---
@@ -11,29 +17,13 @@ import '../styles/global.scss';
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-
-    <!-- open graph meta -->
-    <meta property="og:title" content="Zipper IT services" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="#" />
-    <meta property="og:image" content="/images/zipper-opengraph.jpg" />
-    <meta property="og:description" content="The best software, services and products by Zipper company" />
-
-    <!-- favicon -->
-    <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
-    <link rel="icon" type="image/png" href="/images/favicon/favicon.png" />
-
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,115,400;8..144,115,550&display=swap"
-      rel="stylesheet"
-    />
+    <OpenGraph />
+    <Favicon />
+    <GoogleFonts />
     <title>Zipper IT services</title>
   </head>
   <body>
     <Header />
-    <p>The best customer experiences are built with Zendesk. Our customer service and engagement products are powerful and flexible, and scale to meet the needs of any business. Zendesk serves over 165,000 businesses across hundreds of industries and all company sizes, offering service and support in over 60 languages. Read more</p>
+    <App client:load />
   </body>
 </html>

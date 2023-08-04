@@ -1,3 +1,15 @@
+@mixin mediumFont($width) {
+  font-weight: 530;
+  font-variation-settings: 'wght' 530, 'wdth' $width;
+}
+
+@mixin flexRow {
+  display: flex;
+  align-items: center;
+}
+
+// responsive media queries
+
 $sizes: (
   's': 567px,
   'm': 767px,

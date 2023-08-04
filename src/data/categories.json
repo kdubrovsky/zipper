@@ -1,0 +1,38 @@
+[
+  {
+    "id": "catId1",
+    "priority": 10,
+    "title": "CRM",
+    "slug": "crm"
+  },
+  {
+    "id": "catId2",
+    "priority": 5,
+    "title": "Customer Service & Sales",
+    "slug": "customer-services"
+  },
+  {
+    "id": "catId3",
+    "priority": 2,
+    "title": "Project Management",
+    "slug": "pm"
+  },
+  {
+    "id": "catId4",
+    "priority": 1,
+    "title": "Storage & Sharing Platform",
+    "slug": "storage"
+  },
+  {
+    "id": "catId5",
+    "priority": 6,
+    "title": "Languages",
+    "slug": "lang"
+  },
+  {
+    "id": "catId6",
+    "priority": 6,
+    "title": "Enterprise Tools",
+    "slug": "enterprise"
+  }
+]

@@ -1,0 +1,11 @@
+@import '../../styles/colors';
+
+.productList {
+  margin-bottom: 2rem;
+
+  .wrapper {
+    overflow: hidden;
+    border: 1px solid $gray700;
+    border-radius: 1rem;
+  }
+}

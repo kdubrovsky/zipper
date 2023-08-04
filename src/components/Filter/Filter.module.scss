@@ -1,0 +1,30 @@
+@import '../../styles/colors';
+@import '../../styles/mixins';
+
+.filter {
+  margin-bottom: 24px;
+
+  .wrapper {
+    @include flexRow;
+    justify-content: space-between;
+  }
+
+  .title {
+    @include mediumFont(112);
+    font-size: 32px;
+  }
+
+  select {
+    @include flexRow;
+    @include mediumFont(112);
+    padding: 11px 16px 11px 20px;
+    gap: 8px;
+    background-color: $gray850;
+    min-width: 148px;
+    border-radius: 16px;
+
+    &:hover {
+      background: $gray700;
+    }
+  }
+}

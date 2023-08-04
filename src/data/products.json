@@ -1,0 +1,121 @@
+[
+  {
+    "id": "0211d3fc-5b12-4997-8193-775606b6618c",
+    "priority": 10,
+    "title": "Zendesk",
+    "rating": 2.567,
+    "image": "zendesk.png",
+    "monthlySubscriptionPrice": {
+      "min": 1,
+      "max": 49
+    },
+    "website": "https://www.zendesk.com",
+    "visible": true,
+    "categories": ["catId2"],
+    "office": "https://goo.gl/maps/Jhk5tDZgQZSJbBrbA",
+    "description": "The best customer experiences are built with Zendesk. Our customer service and engagement products are powerful and flexible, and scale to meet the needs of any business. Zendesk serves over 165,000 businesses across hundreds of industries and all company sizes, offering service and support in over 60 languages.",
+    "externalLink": "https://www.zendesk.com"
+  },
+  {
+    "id": "e5704870-78ff-4189-a2d1-421b07d001b1",
+    "priority": 9,
+    "title": "Dropbox",
+    "rating": 3.26,
+    "image": "dropbox.png",
+    "monthlySubscriptionPrice": {
+      "min": 3,
+      "max": 12
+    },
+    "website": "https://www.dropbox.com",
+    "visible": true,
+    "categories": ["catId2", "catId4"],
+    "office": "https://goo.gl/maps/wRusrU86SAppLep3A",
+    "description": "Dropbox brings files together in one central place by creating a special folder on the user's computer. The contents of these folders are synchronized to Dropbox's servers and to other computers and devices where the user has installed Dropbox, keeping the same files up-to-date on all devices.",
+    "externalLink": "https://www.dropbox.com"
+  },
+  {
+    "id": "691e4f08-6ecc-46c5-95f5-a44989fcb08b",
+    "priority": 8,
+    "title": "Asana",
+    "rating": 2.78,
+    "image": "asana.png",
+    "monthlySubscriptionPrice": {
+      "min": 5,
+      "max": 5
+    },
+    "website": "https://www.asana.com",
+    "visible": true,
+    "categories": ["catId1", "catId2", "catId3"],
+    "office": "https://goo.gl/maps/CKKiP2k7xiA6Gowv7",
+    "description": "Asana is a software-as-a-service platform designed for team collaboration and work management. Teams can create projects, assign tasks, set deadlines, and communicate directly within Asana. It also includes reporting tools, file attachments, calendars, and goal tracking.",
+    "externalLink": "https://www.asana.com"
+  },
+  {
+    "id": "21bf3bcb-c3fb-4b87-9923-bda22d595445",
+    "priority": 8,
+    "title": "Figma",
+    "rating": 4.31,
+    "image": "figma.png",
+    "monthlySubscriptionPrice": {
+      "min": 6,
+      "max": 10
+    },
+    "website": "https://www.figma.com",
+    "visible": true,
+    "categories": ["catId2", "catId4"],
+    "office": "https://goo.gl/maps/CKKiP2k7xiA6Gowv7",
+    "description": "Figma is a collaborative web application for interface design, with additional offline features enabled by desktop applications for macOS and Windows. The feature set of Figma focuses on user interface and user experience design, with an emphasis on real-time collaboration.",
+    "externalLink": "https://www.figma.com"
+  },
+  {
+    "id": "399b6069-288b-479d-bc01-edea4d40f4e4",
+    "priority": 8,
+    "title": "Haskell",
+    "rating": 4.55,
+    "image": "haskell.png",
+    "monthlySubscriptionPrice": {
+      "min": 3,
+      "max": 20
+    },
+    "website": "https://www.haskell.org/",
+    "visible": true,
+    "categories": ["catId6", "catId5"],
+    "office": "https://goo.gl/maps/CKKiP2k7xiA6Gowv7",
+    "description": "Haskell lends itself well to concurrent programming due to its explicit handling of effects. Its flagship compiler, GHC, comes with a high-performance parallel garbage collector and light-weight concurrency library containing a number of useful concurrency primitives and abstractions.",
+    "externalLink": "https://www.haskell.org/"
+  },
+  {
+    "id": "c293afaf-66d4-4021-93c6-ad95b84b010e",
+    "priority": 8,
+    "title": "Notion",
+    "rating": 4.68,
+    "image": "notion.png",
+    "monthlySubscriptionPrice": {
+      "min": 6,
+      "max": 9
+    },
+    "website": "https://www.notion.so/",
+    "visible": true,
+    "categories": ["catId1", "catId2", "catId3"],
+    "office": "https://goo.gl/maps/CKKiP2k7xiA6Gowv7",
+    "description": "Notion is a freemium productivity and note-taking web application developed by Notion Labs Inc. It offers organizational tools including task management, project tracking, to-do lists, bookmarking, and more. Additional offline features are offered by desktop and mobile applications available for Windows, macOS, Android, and iOS.",
+    "externalLink": "https://www.notion.so/"
+  },
+  {
+    "id": "d9ba6584-9078-490b-a14f-546428412799",
+    "priority": 8,
+    "title": "Scala",
+    "rating": 4.68,
+    "image": "scala.png",
+    "monthlySubscriptionPrice": {
+      "min": 2,
+      "max": 35
+    },
+    "website": "https://www.scala-lang.org/",
+    "visible": true,
+    "categories": ["catId5", "catId6"],
+    "office": "https://goo.gl/maps/CKKiP2k7xiA6Gowv7",
+    "description": "Scala source code can be compiled to Java bytecode and run on a Java virtual machine (JVM). Scala can also be compiled to JavaScript to run in a browser, or directly to a native executable. On the JVM Scala provides language interoperability with Java so that libraries written in either language may be referenced directly in Scala or Java code.",
+    "externalLink": "https://www.scala-lang.org/"
+  }
+]

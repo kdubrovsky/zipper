@@ -1,0 +1,42 @@
+@import '../../styles/colors';
+@import '../../styles/mixins';
+
+.search {
+  @include flexRow;
+  width: 100%;
+  gap: 0.75rem;
+  background-color: $white;
+  padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+  border-radius: 24px;
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.searchInput {
+  width: 100%;
+  border: none;
+  color: $black;
+  &::placeholder {
+    color: $gray300;
+  }
+}
+
+.searchButton {
+  @include mediumFont(105);
+  padding: 0.9375rem 2rem;
+  color: $black;
+  background-color: $accent;
+  border-radius: 1rem;
+  transition: 0.1s ease-in-out;
+  &:hover {
+    background-color: darken($accent, 5);
+    transform: translateY(-1px);
+    box-shadow: 0 1px 4px rgba(darken($accent, 70), 0.1);
+  }
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 0px 2px rgba(darken($accent, 70), 0.2);
+  }
+}

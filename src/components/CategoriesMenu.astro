@@ -14,18 +14,17 @@ import { Icon } from 'astro-icon';
 </div>
 
 <style lang="scss">
-  @use '../styles/colors.scss';
+  @import '../styles/colors';
+  @import '../styles/mixins';
 
   .menu-toggle {
     position: relative;
   }
 
   button {
-    display: flex;
+    @include flexRow;
     gap: 6px;
-    align-items: center;
-
-    background-color: colors.$white;
+    background-color: $white;
     padding: 0.5rem 0; // extend clickable area
     transition: color 0.2s;
 
@@ -34,7 +33,7 @@ import { Icon } from 'astro-icon';
     }
 
     &:hover {
-      color: colors.$gray200;
+      color: $gray200;
     }
   }
   .dropdown-menu {
@@ -48,11 +47,11 @@ import { Icon } from 'astro-icon';
     min-width: max-content;
     transition: 0.2s ease-in-out;
 
-    background-color: colors.$white;
-    box-shadow: colors.$shadow_low;
+    background-color: $white;
+    box-shadow: $shadow_low;
 
     &:hover {
-      box-shadow: colors.$shadow_high;
+      box-shadow: $shadow_high;
       transform: translateY(-2px);
     }
 

@@ -1,6 +1,8 @@
 @use './colors';
 
 body {
+  min-width: 320px;
+
   font-family: 'Roboto Flex', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -8,6 +10,7 @@ body {
   font-size: 16px;
   line-height: 1.65;
   letter-spacing: 0.002em;
+
   color: colors.$black;
   background-color: colors.$white;
 }
@@ -15,18 +18,33 @@ body {
 a {
   transition: color 0.2s;
   text-decoration: none;
+
   &:visited,
   &:link {
     color: inherit;
+
     &:hover {
       color: colors.$gray200;
     }
   }
 }
 
+button,
+select {
+  cursor: pointer;
+  border: none;
+}
+
 ul,
 ol {
   list-style-type: none;
+}
+
+.container {
+  max-width: 1680px;
+  min-width: 288px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 2.8%, 48px);
 }
 
 .visually-hidden {
@@ -37,9 +55,4 @@ ol {
   position: absolute;
   white-space: nowrap;
   width: 1px;
-}
-
-button {
-  cursor: pointer;
-  border: none;
 }
