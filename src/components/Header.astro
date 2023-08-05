@@ -20,7 +20,7 @@ import Updates from './Updates.astro';
   @import '../styles/mixins';
 
   header {
-    padding: 1.4375rem 0;
+    padding: clamp(0.75rem, 1.6%, 1.5rem) 0;
 
     .wrapper {
       @include flexRow;
@@ -29,7 +29,8 @@ import Updates from './Updates.astro';
 
     nav {
       @include flexRow;
-      gap: 2rem;
+      font-size: clamp(12px, 2.5vw, 16px);
+      gap: clamp(0.75rem, 2.22vw, 3rem);
     }
   }
 </style>

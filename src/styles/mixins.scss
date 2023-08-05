@@ -11,10 +11,7 @@
 // responsive media queries
 
 $sizes: (
-  's': 567px,
-  'm': 767px,
-  'l': 1023px,
-  'xl': 1439px,
+  'mobile': 480px,
 );
 
 @mixin forMediaLess($media) {

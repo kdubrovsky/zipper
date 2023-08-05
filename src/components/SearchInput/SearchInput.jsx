@@ -15,7 +15,7 @@ export default function SearchInput({ onSearch }) {
                 name='query'
                 type='text'
                 id='search'
-                placeholder='Enter product, categories, service name...'
+                placeholder='Product, categories, service name...'
             />
             <button
                 type='submit'

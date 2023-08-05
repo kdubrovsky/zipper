@@ -2,12 +2,12 @@
 @import '../../styles/mixins';
 
 .search {
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
 
   .wrapper {
     background-color: $black;
-    border-radius: 16px;
-    padding: clamp(24px, 6.5%, 96px) 1rem clamp(24px, 7.6%, 160px);
+    border-radius: 1rem;
+    padding: clamp(1.5rem, 6.5%, 6rem) 1rem clamp(1.5rem, 7.6%, 10rem);
     background-image: url('../../images/stars-background.svg');
     background-repeat: no-repeat;
     background-size: 115%;
@@ -16,19 +16,19 @@
 
   .title {
     @include mediumFont(117);
-    font-size: clamp(20px, 3.89vw, 64px);
+    font-size: clamp(1.2rem, 3.89vw, 4rem);
     line-height: 1.25;
     text-align: center;
     letter-spacing: normal;
 
-    width: clamp(256px, 56%, 720px);
-    margin: 0 auto clamp(16px, 3.4%, 48px);
+    width: clamp(16rem, 56%, 45rem);
+    margin: 0 auto clamp(1rem, 3.4%, 3rem);
 
     color: $white;
   }
 
   .searchBox {
-    width: clamp(256px, 43%, 640px);
+    max-width: 35.75rem;
     margin: 0 auto;
   }
 }
