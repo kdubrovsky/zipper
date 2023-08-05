@@ -2,7 +2,7 @@
 @import '../../styles/mixins';
 
 .filter {
-  margin-bottom: 24px;
+  margin-bottom: clamp(0.75rem, 1.67vw, 2rem);
 
   .wrapper {
     @include flexRow;
@@ -11,7 +11,7 @@
 
   .title {
     @include mediumFont(112);
-    font-size: 32px;
+    font-size: clamp(16px, 2.22vw, 40px);
   }
 
   select {

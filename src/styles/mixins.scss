@@ -12,6 +12,8 @@
 
 $sizes: (
   'mobile': 480px,
+  'small': 640px,
+  'medium': 1200px,
 );
 
 @mixin forMediaLess($media) {

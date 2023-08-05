@@ -11,6 +11,10 @@
 //     height: 100%;
 // }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   line-height: 1.25;
   -webkit-font-smoothing: antialiased;
@@ -30,6 +34,7 @@ button,
 textarea,
 select {
   font: inherit;
+  color: inherit;
   letter-spacing: inherit;
   outline: none;
 }

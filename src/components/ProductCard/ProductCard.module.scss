@@ -7,51 +7,63 @@
 }
 
 .product {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 40px 56px 1fr minmax(min-content, 45%) auto;
   background-color: $gray900;
   border-radius: 8px;
   padding: 28px 20px 28px 20px;
+
+  @include forMediaLess('medium') {
+    grid-template-columns: 40px 56px 1fr 2fr;
+  }
+  @include forMediaLess('mobile') {
+    grid-template-columns: 56px 1fr 2fr;
+  }
 }
 
 .card:not(:last-child) {
   border-bottom: 1px solid $gray700;
 }
 
-.primaryInfo {
-  display: flex;
-  align-items: center;
-}
-
 .numbering {
-  flex-basis: 24px;
-  text-align: center;
-  margin-right: 16px;
-  flex-shrink: 0;
+  grid-area: 1 / 1 / span 1 / span 1;
+  text-align: right;
+  padding-right: clamp(16px, 1.67vw, 24px);
   color: $gray300;
   @include mediumFont(105);
+  @include forMediaLess('mobile') {
+    display: none;
+  }
 }
 
 .productLogo {
+  grid-area: 1 / 2 / span 1 / span 1;
   width: 56px;
   height: 56px;
   border-radius: 12px;
   overflow: hidden;
-  margin-right: 24px;
-  flex-shrink: 0;
+  @include forMediaLess('mobile') {
+    grid-area: 1 / 1 / span 1 / span 1;
+  }
 }
 
 .titleWrapper {
-  flex-grow: 1;
-  margin-right: 24px;
+  padding-left: clamp(16px, 1.67vw, 24px);
+  grid-area: 1 / 3 / span 1 / span 1;
+  @include forMediaLess('small') {
+    grid-area: 1 / 3 / span 1 / span 2;
+  }
+  @include forMediaLess('mobile') {
+    grid-area: 1 / 2 / span 1 / span 2;
+  }
 }
 
 .title {
   @include mediumFont(115);
   margin-bottom: 2px;
-  font-size: 20px;
+  font-size: clamp(16px, 1.38vw, 20px);
   line-height: 1.25;
-  min-width: 120px;
 }
 
 .rating {
@@ -59,43 +71,105 @@
   display: flex;
   gap: 4px;
   align-items: center;
-  font-size: 18px;
+  font-size: clamp(16px, 1.38vw, 18px);
   svg {
     color: $star;
   }
 }
 
+.secondaryInfo {
+  grid-area: 1 / 4 / span 1 / span 1;
+  @include flexRow;
+  flex-wrap: wrap;
+  column-gap: 32px;
+  row-gap: 0;
+  padding-left: clamp(16px, 1.67vw, 24px);
+
+  @include forMediaLess('small') {
+    grid-area: 2 / 2 / span 1 / span 3;
+    padding-left: 0;
+    padding-top: 16px;
+  }
+
+  @include forMediaLess('mobile') {
+    grid-area: 2 / 1 / span 1 / span 3;
+  }
+}
+
 .price {
-  margin-right: 24px;
-  flex-basis: 207px;
+  flex-basis: 128px;
 }
 
 .categories {
-  margin-right: 54px;
-  flex-basis: 322px;
+  flex-basis: 332px;
+  flex-grow: 1;
 }
 
 .actions {
+  grid-area: 1 / 5 / span 1 / span 1;
   @include flexRow;
-  flex-shrink: 0;
   gap: 16px;
+  padding-left: 50px;
   padding-right: 4px;
+
+  @include forMediaLess('medium') {
+    grid-area: 2 / 2 / span 1 / span 3;
+    padding: 28px 0 0 0;
+  }
+  @include forMediaLess('small') {
+    grid-area: 3 / 2 / span 1 / span 3;
+  }
+  @include forMediaLess('mobile') {
+    grid-area: 3 / 1 / span 1 / span 3;
+    justify-content: space-between;
+  }
 }
 
 .actionButton {
+  flex-shrink: 0;
   background-color: $white;
   padding: 14px;
   border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+  @include forMediaLess('mobile') {
+    padding: 10px;
+  }
+  &:hover {
+    color: $gray200;
+    transition: transform 0.3s ease-in-out, color 0.2s;
+  }
+  &.opened {
+    transition: transform;
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-in-out;
+  }
 }
 
 .description {
+  transition: 1s ease-in;
+  grid-area: 2 / 2 / 3 / 6;
   border-top: 1px solid $gray700;
   padding-top: 24px;
   margin-top: 28px;
   color: $gray200;
   padding-right: 310px;
-  margin-left: 36px;
-  font-variation-settings: 'wght' 400, 'wdth' 115;
+  font-variation-settings: 'wght' 400, 'wdth' 108;
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+
+  @include forMediaLess('medium') {
+    padding-right: 0;
+    grid-area: 3 / 2 / 4 / -1;
+  }
+
+  @include forMediaLess('small') {
+    grid-area: 4 / 2 / span 1 / span 3;
+  }
+
+  @include forMediaLess('mobile') {
+    grid-area: 4 / 1 / span 1 / span 3;
+    margin-top: 16px;
+    padding-top: 16px;
+  }
 
   a {
     &:link,

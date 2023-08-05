@@ -1,5 +1,6 @@
 import css from './ProductCard.module.scss';
 import Icon from '../Icon/Icon';
+import { useState } from 'react';
 
 export default function ProductCard({
     index,
@@ -34,46 +35,54 @@ export default function ProductCard({
         .map(item => item.title).
         join(', ');
 
+    const [isDescriptionVisible, setIsDescriptionVisible] = useState(false);
+
+    const toggleClassnames = isDescriptionVisible ? `${css.actionButton} ${css.opened}` : css.actionButton;
+
+    const descriptionToggleHandler = () => {
+        setIsDescriptionVisible(prev => !prev);
+    }
+
+
     return (
         <div className={css.card}>
             <div className={css.product}>
-                <div className={css.primaryInfo}>
-                    <p className={css.numbering}>{index + 1}</p>
-                    <div className={css.productLogo}>
-                        <img src={image} alt={title} />
-                    </div>
-                    <div className={css.titleWrapper}>
-                        <h4 className={css.title}>{title}</h4>
-                        <div className={css.rating}>
-                            <Icon name="star" size="24" />
-                            <p>{rating}</p>
-                        </div>
-                    </div>
-                    <p className={css.price}>{priceInfo}</p>
-                    <p className={css.categories}>{categoriesTitles}</p>
-                    <div className={css.actions}>
-                        <button className={css.actionButton} title="Send message">
-                            <Icon name="message" size="24" />
-                            <span className='visually-hidden'>Message</span>
-                        </button>
-                        <a href={office} target="_blank" title="Show on Google Maps" className={css.actionButton}>
-                            <Icon name="office" size="24" />
-                            <span className='visually-hidden'>Location</span>
-                        </a>
-                        <a href={website} title="Open website" target="_blank" className={css.actionButton}>
-                            <Icon name="globe" size="24" />
-                            <span className='visually-hidden'>Website</span>
-                        </a>
-                        <button className={css.actionButton}>
-                            <Icon name="down" size="24" />
-                            <span className='visually-hidden'>Toggle description</span>
-                        </button>
+                <p className={css.numbering}>{index + 1}</p>
+                <div className={css.productLogo}>
+                    <img src={image} alt={title} />
+                </div>
+                <div className={css.titleWrapper}>
+                    <h4 className={css.title}>{title}</h4>
+                    <div className={css.rating}>
+                        <Icon name="star" size="24" />
+                        <p>{rating}</p>
                     </div>
                 </div>
                 <div className={css.secondaryInfo}>
-                    <p className={css.description}>{description}<a href={externalLink} target="_blank">Read more</a>
-                    </p>
+                    <p className={css.price}>{priceInfo}</p>
+                    <p className={css.categories}>{categoriesTitles}</p>
                 </div>
+                <div className={css.actions}>
+                    <button className={css.actionButton} title="Send message">
+                        <Icon name="message" size="24" />
+                        <span className='visually-hidden'>Message</span>
+                    </button>
+                    <a href={office} target="_blank" title="Show on Google Maps" className={css.actionButton}>
+                        <Icon name="office" size="24" />
+                        <span className='visually-hidden'>Location</span>
+                    </a>
+                    <a href={website} title="Open website" target="_blank" className={css.actionButton}>
+                        <Icon name="globe" size="24" />
+                        <span className='visually-hidden'>Website</span>
+                    </a>
+                    <button className={toggleClassnames} onClick={descriptionToggleHandler}>
+                        <Icon name="down" size="24" />
+                        <span className='visually-hidden'>Toggle description</span>
+                    </button>
+                </div>
+                {isDescriptionVisible && <div className={css.description}>
+                    <p>{description}<a href={externalLink} target="_blank">Read&nbsp;more</a></p>
+                </div>}
             </div>
         </div>
     )
