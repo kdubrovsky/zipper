@@ -13,18 +13,47 @@
     @include mediumFont(112);
     font-size: clamp(16px, 2.22vw, 40px);
   }
+}
 
-  select {
-    @include flexRow;
-    @include mediumFont(112);
-    padding: 11px 16px 11px 20px;
-    gap: 8px;
-    background-color: $gray850;
-    min-width: 148px;
-    border-radius: 16px;
+.select {
+  min-width: 160px;
 
-    &:hover {
+  .selectWrapper {
+    display: grid;
+    align-items: center;
+
+    select {
+      width: 100%;
+      grid-area: 1 / 1;
+      @include mediumFont(112);
+      padding: 11px 52px 11px 20px;
+      background-color: $gray850;
+      border-radius: 16px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    &::after {
+      content: '';
+      grid-area: 1 / 1;
+      justify-self: end;
+      margin-right: 16px;
+      background-color: $gray100;
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s ease-in-out;
+      clip-path: path(
+        'M4.36358 7.28027C4.71505 6.92879 5.2849 6.92879 5.63637 7.28027L9.99998 11.6439L14.3636 7.28027C14.7151 6.92879 15.2849 6.92879 15.6364 7.28027C15.9878 7.63174 15.9878 8.20159 15.6364 8.55306L10.6364 13.5531C10.4676 13.7218 10.2387 13.8167 9.99998 13.8167C9.76128 13.8167 9.53236 13.7218 9.36358 13.5531L4.36358 8.55306C4.01211 8.20159 4.01211 7.63174 4.36358 7.28027Z'
+      );
+    }
+  }
+
+  &:hover {
+    select {
       background: $gray700;
+    }
+    .selectWrapper::after {
+      transform: rotate(-180deg);
     }
   }
 }

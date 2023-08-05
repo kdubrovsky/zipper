@@ -35,6 +35,8 @@
   background-color: $accent;
   border-radius: 1rem;
   transition: 0.1s ease-in-out;
+  -webkit-user-select: none; /* Safari */
+  user-select: none;
   &:hover {
     background-color: darken($accent, 5);
     transform: translateY(-1px);

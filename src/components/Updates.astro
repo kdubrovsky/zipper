@@ -11,6 +11,8 @@ const { href, notification = false } = Astro.props;
   .menu-item {
     @include flexRow;
     gap: 0.375rem;
+    -webkit-user-select: none; /* Safari */
+    user-select: none;
 
     &.notification {
       &::after {

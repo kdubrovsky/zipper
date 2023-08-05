@@ -139,7 +139,6 @@
     transition: transform 0.3s ease-in-out, color 0.2s;
   }
   &.opened {
-    transition: transform;
     transform: rotate(180deg);
     transition: transform 0.3s ease-in-out;
   }
