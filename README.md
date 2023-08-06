@@ -4,6 +4,8 @@ Create landing page containing a listing of Zipper company's IT services.
 
 [Figma file](https://www.figma.com/file/7aFeqp9RrKV2ddSuNmEN64/DG_Front_General_IT_Test?type=design&node-id=0%3A1&mode=design&t=aXyVFiLjqzwuYykW-1)
 
+### [Production build on Netlify](https://zipper-services.netlify.app)
+
 ## Task conditions
 
 - Use a framework for static site generation (SSG): Next, Gatsby, Astro
@@ -34,3 +36,14 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## Implementation features
+
+- Perfect fluid responsive styling from 320px mobile to desktop screens
+- Variable fonts
+- Open Graph metadata and modern favicons set
+- Separated JSON data of software categories and products
+- Data contains useful priority and visibility properties
+- SCSS and SCSS Modules
+- Semantic markup and accessibility improvements
+- A lot of little fun details and microanimations
