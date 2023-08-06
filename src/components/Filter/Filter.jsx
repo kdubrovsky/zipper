@@ -13,7 +13,7 @@ export default function Filter({ onFilter, onReset, isResetVisible }) {
                         <label htmlFor="rating" className='visually-hidden'>Select your city</label>
                         <div className={css.selectWrapper}>
                             <select name="rating" id="rating" onChange={onFilter}>
-                                <option defaultValue="0">All rates</option>
+                                <option defaultValue value="0">All rates</option>
                                 <option value="2">2+ rating</option>
                                 <option value="3">3+ rating</option>
                                 <option value="4">4+ rating</option>
