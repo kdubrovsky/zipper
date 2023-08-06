@@ -12,9 +12,10 @@
 
   .emptyStateMessage {
     @include mediumFont(112);
-    font-size: clamp(16px, 2vw, 24px);
+    padding: 2em 1em;
+
+    font-size: clamp(1rem, 2vw, 1.5rem);
     text-align: center;
     color: $gray200;
-    padding: 2em 1em;
   }
 }

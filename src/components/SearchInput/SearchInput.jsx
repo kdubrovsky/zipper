@@ -2,7 +2,6 @@ import css from './SearchInput.module.scss';
 import Icon from '../Icon/Icon';
 
 export default function SearchInput({ onSearch }) {
-
     return (
         <form className={css.search} onSubmit={onSearch}>
             <label
@@ -23,6 +22,6 @@ export default function SearchInput({ onSearch }) {
                 className={css.searchButton}>
                 <span>Search</span>
             </button>
-        </form >
+        </form>
     )
 }

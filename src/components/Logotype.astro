@@ -5,13 +5,16 @@ import { Icon } from 'astro-icon';
 <div class="logotype">
   <h1 class="visually-hidden">Zipper IT services</h1>
   <a href="/">
-    <Icon name="logotype" />
+    <Icon name="logotype" width="100" />
   </a>
 </div>
+
+<!-- scoped styles -->
 
 <style lang="scss">
   .logotype {
     flex-shrink: 0;
+
     [astro-icon] {
       height: clamp(26px, 2.5vw, 40px);
     }

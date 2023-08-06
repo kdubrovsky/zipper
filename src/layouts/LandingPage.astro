@@ -1,26 +1,31 @@
 ---
 // astro components
-import Header from '../components/Header.astro';
+
 import OpenGraph from '../components/OpenGraph.astro';
 import Favicon from '../components/Favicon.astro';
 import GoogleFonts from '../components/GoogleFonts.astro';
 
-// react components
+import Header from '../components/Header.astro';
+
+// react app
 import App from '../components/App/App';
 
 // global styles
 import '../styles/normalize.scss';
 import '../styles/global.scss';
+
+// page metadata
+const { title, description } = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <OpenGraph />
+    <OpenGraph title={title} description={description} />
     <Favicon />
     <GoogleFonts />
-    <title>Zipper IT services</title>
+    <title>{title}</title>
   </head>
   <body>
     <Header />

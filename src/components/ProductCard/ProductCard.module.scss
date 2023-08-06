@@ -2,23 +2,24 @@
 @import '../../styles/mixins';
 
 .card {
+  padding: clamp(0.375rem, 0.75vw, 0.8rem);
   background-color: $white;
-  padding: 11px;
 }
 
 .product {
   display: grid;
+  grid-template-columns: 2.5rem 3.5rem 1fr minmax(min-content, 45%) auto;
+  padding: clamp(1rem, 1.95vw, 2.5rem) clamp(0.75rem, 1.4vw, 2rem);
   align-items: center;
-  grid-template-columns: 40px 56px 1fr minmax(min-content, 45%) auto;
+
+  border-radius: 0.5rem;
   background-color: $gray900;
-  border-radius: 8px;
-  padding: 28px 20px 28px 20px;
 
   @include forMediaLess('medium') {
-    grid-template-columns: 40px 56px 1fr 2fr;
+    grid-template-columns: 2.5rem 3.5rem 1fr 2fr;
   }
   @include forMediaLess('mobile') {
-    grid-template-columns: 56px 1fr 2fr;
+    grid-template-columns: 3.5rem 1fr 2fr;
   }
 }
 
@@ -28,10 +29,12 @@
 
 .numbering {
   grid-area: 1 / 1 / span 1 / span 1;
+  padding-right: clamp(1rem, 1.67vw, 1.5rem);
+
   text-align: right;
-  padding-right: clamp(16px, 1.67vw, 24px);
-  color: $gray300;
   @include mediumFont(105);
+  color: $gray300;
+
   @include forMediaLess('mobile') {
     display: none;
   }
@@ -39,18 +42,20 @@
 
 .productLogo {
   grid-area: 1 / 2 / span 1 / span 1;
-  width: 56px;
-  height: 56px;
-  border-radius: 12px;
   overflow: hidden;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0.75rem;
+
   @include forMediaLess('mobile') {
     grid-area: 1 / 1 / span 1 / span 1;
   }
 }
 
 .titleWrapper {
-  padding-left: clamp(16px, 1.67vw, 24px);
   grid-area: 1 / 3 / span 1 / span 1;
+  padding-left: clamp(1rem, 1.67vw, 1.5rem);
+
   @include forMediaLess('small') {
     grid-area: 1 / 3 / span 1 / span 2;
   }
@@ -62,59 +67,60 @@
 .title {
   @include mediumFont(115);
   margin-bottom: 2px;
-  font-size: clamp(16px, 1.38vw, 20px);
+  font-size: clamp(1rem, 1.38vw, 1.25rem);
   line-height: 1.25;
 }
 
 .rating {
   @include mediumFont(115);
-  display: flex;
-  gap: 4px;
-  align-items: center;
-  font-size: clamp(16px, 1.38vw, 18px);
+  @include flexRow;
+  gap: 0.25rem;
+
+  font-size: clamp(1rem, 1.38vw, 1.25rem);
+
   svg {
     color: $star;
   }
 }
 
 .secondaryInfo {
-  grid-area: 1 / 4 / span 1 / span 1;
   @include flexRow;
   flex-wrap: wrap;
-  column-gap: 32px;
-  row-gap: 0;
-  padding-left: clamp(16px, 1.67vw, 24px);
+  column-gap: 2rem;
+
+  grid-area: 1 / 4 / span 1 / span 1;
+  padding-left: clamp(1rem, 1.67vw, 1.5rem);
 
   @include forMediaLess('small') {
     grid-area: 2 / 2 / span 1 / span 3;
     padding-left: 0;
-    padding-top: 16px;
+    padding-top: 1rem;
   }
 
   @include forMediaLess('mobile') {
     grid-area: 2 / 1 / span 1 / span 3;
   }
-}
 
-.price {
-  flex-basis: 128px;
-}
+  .price {
+    flex-basis: 8rem;
+  }
 
-.categories {
-  flex-basis: 332px;
-  flex-grow: 1;
+  .categories {
+    flex-basis: 21rem;
+    flex-grow: 1;
+  }
 }
 
 .actions {
-  grid-area: 1 / 5 / span 1 / span 1;
   @include flexRow;
-  gap: 16px;
-  padding-left: 50px;
-  padding-right: 4px;
+  gap: 1rem;
+
+  grid-area: 1 / 5 / span 1 / span 1;
+  padding: 0 0.25rem 0 3.125rem;
 
   @include forMediaLess('medium') {
     grid-area: 2 / 2 / span 1 / span 3;
-    padding: 28px 0 0 0;
+    padding: 1.5rem 0 0 0;
   }
   @include forMediaLess('small') {
     grid-area: 3 / 2 / span 1 / span 3;
@@ -127,13 +133,12 @@
 
 .actionButton {
   flex-shrink: 0;
-  background-color: $white;
-  padding: 14px;
+  padding: clamp(0.625rem, 0.97vw, 0.875rem);
   border-radius: 50%;
+
+  background-color: $white;
   transition: transform 0.3s ease-in-out;
-  @include forMediaLess('mobile') {
-    padding: 10px;
-  }
+
   &:hover {
     color: $gray200;
     transition: transform 0.3s ease-in-out, color 0.2s;
@@ -145,19 +150,21 @@
 }
 
 .description {
-  transition: 1s ease-in;
   grid-area: 2 / 2 / 3 / 6;
   border-top: 1px solid $gray700;
-  padding-top: 24px;
-  margin-top: 28px;
-  color: $gray200;
-  padding-right: 310px;
-  font-variation-settings: 'wght' 400, 'wdth' 108;
+  padding-top: 1.5rem;
+  margin-top: 1.75rem;
+  padding-right: 19.375rem;
+
   font-size: clamp(0.9rem, 1.2vw, 1rem);
+  font-variation-settings: 'wght' 400, 'wdth' 108;
+
+  color: $gray200;
+  transition: 0.2s ease-in;
 
   @include forMediaLess('medium') {
-    padding-right: 0;
     grid-area: 3 / 2 / 4 / -1;
+    padding-right: 0;
   }
 
   @include forMediaLess('small') {
@@ -166,19 +173,20 @@
 
   @include forMediaLess('mobile') {
     grid-area: 4 / 1 / span 1 / span 3;
-    margin-top: 16px;
-    padding-top: 16px;
+    margin-top: 1rem;
+    padding-top: 1rem;
   }
 
   a {
     &:link,
     &:visited {
+      @include mediumFont(105);
       display: inline;
-      padding-left: 4px;
+      padding-left: 0.25em;
+
       text-decoration: underline;
       text-underline-offset: 4px;
       color: $black;
-      @include mediumFont(105);
     }
   }
 }

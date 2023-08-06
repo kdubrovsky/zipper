@@ -15,6 +15,7 @@ export default function App() {
 
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedRating, setSelectedRating] = useState(0);
+
     const refSearchKey = useRef(crypto.randomUUID());
     const refFilterKey = useRef(crypto.randomUUID());
 
@@ -36,14 +37,27 @@ export default function App() {
         refFilterKey.current = crypto.randomUUID();
     }
 
+    const isResetVisible = searchQuery || (selectedRating !== 0);
+
     const filteredProducts = productsData
         .filter(item => item.title.toLowerCase().includes(searchQuery) && item.rating > selectedRating);
 
     return (
         <main>
-            <Search onSearch={searchHandler} key={refSearchKey.current} />
-            <Filter onFilter={ratingFilterHandler} onReset={resetFilter} key={refFilterKey.current} />
-            <ProductList products={filteredProducts} categories={categoriesData} />
+            <Search
+                key={refSearchKey.current}
+                onSearch={searchHandler}
+            />
+            <Filter
+                key={refFilterKey.current}
+                isResetVisible={isResetVisible}
+                onFilter={ratingFilterHandler}
+                onReset={resetFilter}
+            />
+            <ProductList
+                products={filteredProducts}
+                categories={categoriesData}
+            />
         </main>
     )
 }

@@ -7,11 +7,6 @@
   padding: 0;
 }
 
-// html,
-// body {
-//     height: 100%;
-// }
-
 html {
   -webkit-text-size-adjust: 100%;
 }
@@ -35,14 +30,15 @@ button,
 textarea,
 select {
   font: inherit;
-  color: inherit;
   letter-spacing: inherit;
+  color: inherit;
   outline: none;
 }
 
 select,
 input {
   appearance: none;
+  border: none;
 }
 
 p,

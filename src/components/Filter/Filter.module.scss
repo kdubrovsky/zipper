@@ -13,12 +13,13 @@
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    column-gap: 16px;
+    column-gap: 1rem;
   }
 
   .resetButton {
     background-color: transparent;
-    font-size: 14px;
+    font-size: 0.875rem;
+
     &:hover {
       color: $gray200;
     }
@@ -26,24 +27,27 @@
 
   .title {
     @include mediumFont(112);
-    font-size: clamp(16px, 2.22vw, 40px);
+    font-size: clamp(1rem, 2.22vw, 2rem);
   }
 }
 
 .select {
-  min-width: 144px;
+  min-width: 9rem;
 
   .selectWrapper {
     display: grid;
     align-items: center;
 
     select {
-      width: 100%;
-      grid-area: 1 / 1;
       @include mediumFont(112);
+
+      grid-area: 1 / 1;
+      width: 100%;
       padding: 11px 52px 11px 20px;
-      background-color: $gray850;
       border-radius: 16px;
+
+      background-color: $gray850;
+
       text-overflow: ellipsis;
       overflow: hidden;
     }
@@ -52,14 +56,17 @@
       content: '';
       grid-area: 1 / 1;
       justify-self: end;
-      margin-right: 16px;
-      background-color: $gray100;
+
+      margin-right: 1rem;
       width: 20px;
       height: 20px;
-      transition: transform 0.3s ease-in-out;
+
       clip-path: path(
         'M4.36358 7.28027C4.71505 6.92879 5.2849 6.92879 5.63637 7.28027L9.99998 11.6439L14.3636 7.28027C14.7151 6.92879 15.2849 6.92879 15.6364 7.28027C15.9878 7.63174 15.9878 8.20159 15.6364 8.55306L10.6364 13.5531C10.4676 13.7218 10.2387 13.8167 9.99998 13.8167C9.76128 13.8167 9.53236 13.7218 9.36358 13.5531L4.36358 8.55306C4.01211 8.20159 4.01211 7.63174 4.36358 7.28027Z'
-      );
+      ); // chevron
+
+      background-color: $gray100;
+      transition: transform 0.3s ease-in-out;
     }
   }
 
@@ -67,6 +74,7 @@
     select {
       background: $gray700;
     }
+
     .selectWrapper::after {
       transform: rotate(-180deg);
     }

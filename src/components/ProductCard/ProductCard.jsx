@@ -8,7 +8,7 @@ export default function ProductCard({
     categoriesMap
 }) {
 
-    let {
+    const {
         title,
         rating,
         image,
@@ -23,9 +23,8 @@ export default function ProductCard({
         externalLink
     } = product;
 
-    rating = rating.toFixed(1);
-    image = `/images/products/${image}`;
-
+    const ratingFixed = rating.toFixed(1);
+    const imageSrc = `/images/products/${image}`;
     const priceValue = (priceMin === priceMax) ? priceMin : `${priceMin}\u2006–\u2006${priceMax}`;
     const priceInfo = `$${priceValue} / Month`;
 
@@ -39,23 +38,20 @@ export default function ProductCard({
 
     const toggleClassnames = isDescriptionVisible ? `${css.actionButton} ${css.opened}` : css.actionButton;
 
-    const descriptionToggleHandler = () => {
-        setIsDescriptionVisible(prev => !prev);
-    }
-
+    const descriptionToggleHandler = () => setIsDescriptionVisible(prev => !prev);
 
     return (
         <div className={css.card}>
             <div className={css.product}>
                 <p className={css.numbering}>{index + 1}</p>
                 <div className={css.productLogo}>
-                    <img src={image} alt={title} />
+                    <img src={imageSrc} alt={title} />
                 </div>
                 <div className={css.titleWrapper}>
                     <h4 className={css.title}>{title}</h4>
                     <div className={css.rating}>
                         <Icon name="star" size="24" />
-                        <p>{rating}</p>
+                        <p>{ratingFixed}</p>
                     </div>
                 </div>
                 <div className={css.secondaryInfo}>

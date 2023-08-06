@@ -1,5 +1,8 @@
-<meta property="og:title" content="Zipper IT services" />
+---
+const { title, description, coverImage = '/images/zipper-opengraph.jpg' } = Astro.props;
+---
+
+<meta property="og:title" content={title} />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="#" />
-<meta property="og:image" content="/images/zipper-opengraph.jpg" />
-<meta property="og:description" content="The best software, services and products by Zipper company" />
+<meta property="og:image" content={coverImage} />
+<meta property="og:description" content={description} />

@@ -5,9 +5,10 @@
   margin-bottom: clamp(20px, 2.22vw, 40px);
 
   .wrapper {
-    background-color: $black;
-    border-radius: 1rem;
     padding: clamp(1.5rem, 6.5%, 6rem) 1rem clamp(1.5rem, 7.6%, 10rem);
+    border-radius: 1rem;
+
+    background-color: $black;
     background-image: url('../../images/stars-background.svg');
     background-repeat: no-repeat;
     background-size: 115%;
@@ -16,13 +17,14 @@
 
   .title {
     @include mediumFont(117);
+
+    width: clamp(16rem, 56%, 45rem);
+    margin: 0 auto clamp(1rem, 3.4%, 3rem);
+
     font-size: clamp(1.2rem, 3.89vw, 4rem);
     line-height: 1.25;
     text-align: center;
     letter-spacing: normal;
-
-    width: clamp(16rem, 56%, 45rem);
-    margin: 0 auto clamp(1rem, 3.4%, 3rem);
 
     color: $white;
   }
