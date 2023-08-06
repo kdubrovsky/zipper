@@ -41,7 +41,7 @@ export default function ProductCard({
     const descriptionToggleHandler = () => setIsDescriptionVisible(prev => !prev);
 
     return (
-        <div className={css.card}>
+        <li className={css.card}>
             <div className={css.product}>
                 <p className={css.numbering}>{index + 1}</p>
                 <div className={css.productLogo}>
@@ -80,6 +80,6 @@ export default function ProductCard({
                     <p>{description}<a href={externalLink} target="_blank">Read&nbsp;more</a></p>
                 </div>}
             </div>
-        </div>
+        </li>
     )
 }

@@ -24,13 +24,13 @@ export default function ProductList({ products, categories }) {
     return (
         <section className={css.productList}>
             <div className='container' >
-                <div className={css.wrapper}>
+                <ul className={css.wrapper}>
                     {
                         productCards.length
                             ? productCards
                             : emptyResultsMessage
                     }
-                </div>
+                </ul>
             </div>
         </section>
     )
