@@ -9,6 +9,21 @@
     justify-content: space-between;
   }
 
+  .headerWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 16px;
+  }
+
+  .resetButton {
+    background-color: transparent;
+    font-size: 14px;
+    &:hover {
+      color: $gray200;
+    }
+  }
+
   .title {
     @include mediumFont(112);
     font-size: clamp(16px, 2.22vw, 40px);
@@ -16,7 +31,7 @@
 }
 
 .select {
-  min-width: 160px;
+  min-width: 144px;
 
   .selectWrapper {
     display: grid;

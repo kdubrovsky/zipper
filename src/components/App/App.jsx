@@ -1,5 +1,5 @@
 //hooks
-import { useState } from "react"
+import { useRef, useState } from "react"
 
 //components
 import Search from "../Search/Search"
@@ -13,9 +13,10 @@ import categoriesData from '../../data/categories.json';
 
 export default function App() {
 
-    const [selectedCategory, setSelectedCategory] = useState(null);
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedRating, setSelectedRating] = useState(0);
+    const refSearchKey = useRef(crypto.randomUUID());
+    const refFilterKey = useRef(crypto.randomUUID());
 
     const searchHandler = (e) => {
         e.preventDefault();
@@ -28,13 +29,20 @@ export default function App() {
         setSelectedRating(+e.target.value);
     }
 
+    const resetFilter = () => {
+        setSearchQuery('');
+        setSelectedRating(0);
+        refSearchKey.current = crypto.randomUUID();
+        refFilterKey.current = crypto.randomUUID();
+    }
+
     const filteredProducts = productsData
         .filter(item => item.title.toLowerCase().includes(searchQuery) && item.rating > selectedRating);
 
     return (
         <main>
-            <Search onSearch={searchHandler} />
-            <Filter onFilter={ratingFilterHandler} />
+            <Search onSearch={searchHandler} key={refSearchKey.current} />
+            <Filter onFilter={ratingFilterHandler} onReset={resetFilter} key={refFilterKey.current} />
             <ProductList products={filteredProducts} categories={categoriesData} />
         </main>
     )

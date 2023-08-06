@@ -1,35 +1,44 @@
 ---
 const { title } = Astro.props;
+const menuItems = [
+  { title: 'Popular', slug: '#' },
+  { title: 'Our Favorites', slug: '#' },
+  { title: 'New products', slug: '#' },
+  { title: 'Leaders', slug: '#' },
+];
 import { Icon } from 'astro-icon';
 ---
 
 <div class="categories-menu">
-  <button id="menubutton">{title}<Icon name="chevron-down" /></button>
+  <button id="toggleButton">{title}<Icon name="chevron-down" /></button>
   <ul class="dropdown-menu">
-    <li><a href="#">Popular</a></li>
-    <li><a href="#">Design tools</a></li>
-    <li><a href="#">Code tools</a></li>
-    <li><a href="#">Cloud services</a></li>
+    {
+      menuItems.map((item) => (
+        <li>
+          <a href={item.slug}>{item.title}</a>
+        </li>
+      ))
+    }
   </ul>
 </div>
 
 <script>
   const categoriesMenu = document.querySelector('.dropdown-menu');
-  const toggleButton = document.querySelector('#menubutton');
+  const toggleButton = document.querySelector('#toggleButton');
 
-  toggleButton.addEventListener('click', () => {
+  const outerClickHandler = (e: Event) => {
+    const clickedElement = e.target as HTMLElement;
+    if (!clickedElement.matches('#toggleButton')) categoriesMenu.classList.remove('opened');
+  };
+
+  const toggleDropdown = (e: Event) => {
+    e.stopPropagation();
     categoriesMenu.classList.toggle('opened');
     toggleButton.classList.toggle('flipped');
-  });
+    window.addEventListener('click', outerClickHandler);
+  };
 
-  window.addEventListener('click', (e) => {
-    const clickedElement = e.target as HTMLElement;
-    if (!clickedElement.matches('#menubutton')) {
-      if (categoriesMenu.classList.contains('opened')) {
-        categoriesMenu.classList.remove('opened');
-      }
-    }
-  });
+  toggleButton.addEventListener('click', toggleDropdown);
 </script>
 
 <style lang="scss">

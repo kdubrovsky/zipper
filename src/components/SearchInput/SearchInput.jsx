@@ -16,6 +16,7 @@ export default function SearchInput({ onSearch }) {
                 type='text'
                 id='search'
                 placeholder='Product, categories, service name...'
+                autoComplete='off'
             />
             <button
                 type='submit'

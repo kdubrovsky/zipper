@@ -3,6 +3,8 @@ import css from './ProductList.module.scss';
 
 export default function ProductList({ products, categories }) {
 
+
+
     const categoriesMap = {};
     categories.forEach(item => categoriesMap[item.id] = item)
 
@@ -24,7 +26,12 @@ export default function ProductList({ products, categories }) {
         <section className={css.productList}>
             <div className='container' >
                 <div className={css.wrapper}>
-                    {productCards}
+                    {
+                        productCards.length ? productCards :
+                            <p className={css.emptyStateMessage}>
+                                Sorry, we don't have any products that match your request
+                            </p>
+                    }
                 </div>
             </div>
         </section>

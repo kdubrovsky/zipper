@@ -12,6 +12,6 @@ export default function Search({ onSearch }) {
                     </div>
                 </div>
             </div>
-        </section >
+        </section>
     )
 }
